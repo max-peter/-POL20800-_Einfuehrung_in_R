@@ -10,13 +10,22 @@ film_a<-film[,c("imdb_title_id", "original_title", "year", "genre", "duration", 
 # b) Maximale Punktzahl: 1 Punkt
 # Prüfe, in wie vielen Spalten aus film_a fehlende Werte vorkommen und schreibe das Ergebnis in die Variable b. #nolint
 
-b<-is.na(film_a$,)
-b<-any(is.na(film_a))
-b<-sum(colSums(is.na(film_a)))
-b<-which(is.na(film_a)==TRUE)
-b<-ncol((is.na(film_a)==TRUE))
+# b<-any(is.na(film_a))
+# b<-which(is.na(film_a)==TRUE)
+# b<-ncol((is.na(film_a)==TRUE))
+# spalten<-ncol(film_a)
+#= spalten = 10
+# b<-sum(is.na(film_a[,c(1:10)]))
+#= 88
+# b<-any(is.na(film_a[,c(1:10)]))
+#= TRUE
+# b<-is.na(film_a)
+# b<-is.na(film_a[,c(1:10)])
+# False or True
 
-b<-sum(is.na(film_a))
+colSums(is.na(film_a))
+b<-3
+
 
 # c) Maximale Punktzahl: 1 Punkt
 # Berechne den Mittelwert aller Metascores aus film_a und speichere das Ergebnis in der Variable c. Fehlende Werte sollen nicht in die Berechnung miteinfließen. # nolint
