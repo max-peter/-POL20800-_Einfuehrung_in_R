@@ -87,36 +87,33 @@ apply(is.na(da),2,any)
 # Äussere Funktion muss nach hinten
 # Apply hat auf einen log. Dataframe ausgeführt
 # Alternativ aufspalten mit sep. Funktion
-
 fehlende_werte<-function(x){
     any(is.na(x))
 }
 apply(da,2,fehlende_werte)
 
 # Jetzt auch gleich in apply definieren
-
 apply(da,2,function(x){any(is.na(x))})
 
 # Beispiel mit iris aus R
-
 i <- iris
 View (i)
+
 # mean der Spalten 1-4
 apply(i[,1:4],2,mean)
+
 # Daten auf nur eine Nachkommastelle
 # mit function in apply
 apply(i[,1:4],2,function(x){round(mean(x),1)})
 
 # Mittelwert der ersten 4 Spalten pro Spezies
 # Hierzu benötigen wir wieder die Funktion aggregate!
-
 aggregate(Sepal.Length~Species,data=i,mean)
 
 # Jetzt für alle unserer 4 Spalten mit apply
 apply(i[,1:4],2,function(x){aggregate(x~Species,data=i,mean)})
 
 # Jetzt wieder runden
-
 mw_ger<-function(x){
     round(mean(x),1)
 }
@@ -143,13 +140,11 @@ m<-merge(x=d1,y=d2,by="Namen")
 m<-merge(d1,d2,by="Namen")
 
 # Was wenn der Nenner unterschiedliche Namen hat?
-
 d1<-data.frame(Namen=n,Handy=h)
 d2<-data.frame(Vornamen=n,Adresse=a)
 m<-merge(d1,d2,by.x="Namen",by.y="Vornamen")
 
 # Jetzt mit mehreren Spalten
-
 n<-c("Paula","Markus","Diana","Hedwig")
 h<-c(818818818, 717717717, 616616616, 515515515)
 a<-c("Wachtelweg","Dorfgasse","Stahlstraße","Herzogweg")
@@ -188,5 +183,4 @@ merge(d3,d4,by="Namen")
 # Duplikate entfernen
 m<-merge(d3,d4,by="Namen")
 m<-m[!duplicated(m),]
-
 

@@ -12,3 +12,9 @@ film<-read.csv("resources/xxx.csv", encoding="UTF-8")
 
 }
 
+# Informationen erhalten
+# • Vektorlänge: length(vek)
+# • Minimum, Maximum: min(vek), max(vek)
+# • Mean, Median: mean(vek), median(vek)
+# • Summary: summary(vek)
+
